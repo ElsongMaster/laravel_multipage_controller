@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+ use App\Http\Controllers\IndexController ;
+  use App\Http\Controllers\ProductsController;
+ use App\Http\Controllers\ HomeController;
+ use App\Http\Controllers\storeController ;
+  use App\Http\Controllers\aboutController ;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,11 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+ Route::get('/',[HomeController::class,'index'] );
 
 
-Route::get('/index', function () {
-    return view('template.index');
-});
+Route::get('/index',[IndexController::class,'index'] );
+
+
+Route::get('/about',[AboutController::class,'index'] );
+
+Route::get('/products',[ProductsController::class,'index'] );
+
+Route::get('/store',[storeController::class,'index'] );
