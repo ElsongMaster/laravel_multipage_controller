@@ -24,12 +24,12 @@
 
 <body>
 
-@include('partials.header')
+@include('partials.header',['tabTitle'=>$tabTitle])
 
 @yield('content')
 
 
-  @include('partials.footer')
+  @include('partials.footer',['footerContent'=>$footerContent])
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
